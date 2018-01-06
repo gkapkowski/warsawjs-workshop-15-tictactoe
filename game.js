@@ -58,17 +58,13 @@ document.addEventListener('DOMContentLoaded', () => {
 		];
 
 		if (boardCheck.includes('redredred')) {
-			setTimeout(() => {
-				alert("Red Wins!");
-				initGame();
-			}, 100);
+			alert("Red Wins!");
+			initGame();
 		}
 
 		if (boardCheck.includes('blueblueblue')) {
-			setTimeout(() => {
-				alert("Blue Wins!");
-				initGame();
-			}, 100);
+			alert("Blue Wins!");
+			initGame();
 		}
 
 		if(emptyFields === 0) {
