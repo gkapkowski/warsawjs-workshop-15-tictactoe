@@ -12,8 +12,14 @@
 .board div {
 	height: 100px;
 	width: 100px;
-	background-color: pink;
 	display: inline-block;
 	border: 1px solid grey;
 }
 
+.red {
+	background-color: crimson;
+}
+
+.blue {
+	background-color: cornflowerblue;
+}
