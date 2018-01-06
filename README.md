@@ -5,7 +5,7 @@
 * Register on (github.com) and
 * [create a new repository](https://help.github.com/articles/creating-a-new-repository/).
 - - - -
-
+## Initial game
 ### Step 1
 [code reference](https://github.com/gkapkowski/warsawjs-workshop-15-tictactoe/tree/step-1)
 1. create `initGame()` function which:
@@ -76,3 +76,13 @@ You've completed base game version. Push it to your GitHub repository and publis
 ### Step 8
 [code reference](https://github.com/gkapkowski/warsawjs-workshop-15-tictactoe/tree/step-8)
 1. display information about which player round is now
+
+### Step 9
+[code reference](https://github.com/gkapkowski/warsawjs-workshop-15-tictactoe/tree/step-9)
+1. display information about score for each player
+2. update scores after each win
+3. add reset score button
+
+### Step 10
+[code reference](https://github.com/gkapkowski/warsawjs-workshop-15-tictactoe/tree/step-10)
+1. enable players to pick their names
