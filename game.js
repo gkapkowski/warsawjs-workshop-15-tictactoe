@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-    var playerClasses = ['red', 'blue'];
+    var playerClasses = {
+        'playerA': 'red', 
+        'playerB': 'blue'
+    };
     var currentPlayer;
 	var emptyFields;
 
@@ -8,19 +11,19 @@ document.addEventListener('DOMContentLoaded', () => {
     function initGame() {
 		var fields = document.querySelectorAll('.board > div');
 
-		currentPlayer = 0;
+		currentPlayer = 'playerA';
 		emptyFields = 9;
     	fields.forEach(field => field.addEventListener('click', fieldClickHandler));
 		fields.forEach(field => field.removeAttribute('class'));
 	}
 
 	function fieldClickHandler () {
-		var playerClass = playerClasses[currentPlayer];
+        var playerClass = playerClasses[currentPlayer];
+        this.classList.add(playerClass);
 
 		emptyFields--;
-		currentPlayer = currentPlayer ? 0 : 1;
+        currentPlayer = currentPlayer === 'playerA' ? 'playerB' : 'playerA';
 
-		this.classList.add(playerClass);
 		this.removeEventListener('click', fieldClickHandler);
 
 		checkWinner();
