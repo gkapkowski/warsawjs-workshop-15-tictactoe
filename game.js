@@ -72,8 +72,10 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 
 		if(emptyFields === 0) {
-			alert('Tie');
-			initGame();
+            setTimeout(() => {
+                alert('Tie');
+                initGame();
+            }, 100);
 		}
 	}
 });
