@@ -6,7 +6,7 @@
 * [create a new repository](https://help.github.com/articles/creating-a-new-repository/).
 - - - -
 ## Initial game
-### Step 1
+### Step 1 - Draw initial board
 [code reference](https://github.com/gkapkowski/warsawjs-workshop-15-tictactoe/tree/step-1)
 1. create `initGame()` function which:
     * gets all `<div>` elements inside `div.board` element
@@ -14,11 +14,11 @@
 
 2. create `fieldClickHandler()` function which logs string 'Hello' and `this` to the console
 
-### Step 2
+### Step 2 - Color each field after user click
 [code reference](https://github.com/gkapkowski/warsawjs-workshop-15-tictactoe/tree/step-2)
 1. inside `fieldClickHandler()` function add 'red' to clicked element classes (use native `classList.add()`)
 
-### Step 3
+### Step 3 - Change color depeding on current player
 [code reference](https://github.com/gkapkowski/warsawjs-workshop-15-tictactoe/tree/step-3)
 1. at the top of the file:
     * declare `playerClasses` object to hold color for each player (playerA - 'red' and playerB - 'blue')
@@ -28,11 +28,11 @@
     * declare `playerClass` variable
     * assign to it name of the color of currentPlayer
 
-### Step 4
+### Step 4 - Allow only one click per field
 [code reference](https://github.com/gkapkowski/warsawjs-workshop-15-tictactoe/tree/step-4)
 1. remove click event listener from clicked element, so it is impossible to click one element twice (use `removeEventListener()` function)
 
-### Step 5
+### Step 5 - Check if game has ended (all fields have been clicked)
 [code reference](https://github.com/gkapkowski/warsawjs-workshop-15-tictactoe/tree/step-5)
 1. at the top of the file declare `emptyFields` variable in which you will store number of empty fileds left
 2. inside `initGame()` function assign to this variable number of empty fields at the beginning of the game (9)
@@ -41,7 +41,7 @@
     * check if game has ended (game ends when emptyFields equals to 0)
     * if it has ended show alert on the screen (use built-in `alert()` function)
 
-### Step 6
+### Step 6 - Check if any player won during the game
 [code reference](https://github.com/gkapkowski/warsawjs-workshop-15-tictactoe/tree/step-6)
 1. create new function `checkWinner()` and inside this function:
     * get all `<div>` elements inside `div.board` element and store it as a variable
@@ -53,16 +53,16 @@
     * use `if() {...}` statement to check if playerA or playerB has won the game
     * move end game check to the bottom of `checkWinner()` function
 
-### Step 6a
+### Step 6a - Make checks 
 [code reference](https://github.com/gkapkowski/warsawjs-workshop-15-tictactoe/tree/step-6a)
 1. create array with all winning configurations
 2. change `if() {...}` statements to use `.includes()` to check the winner
 
-### Step 7
+### Step 7 - Allow for more than one game
 [code reference](https://github.com/gkapkowski/warsawjs-workshop-15-tictactoe/tree/step-7)
 1. reinitialize game once any of the players wins or there is no more empty fields on the board
 
-### Step 7a
+### Step 7a - Fix chrome...
 [code reference](https://github.com/gkapkowski/warsawjs-workshop-15-tictactoe/tree/step-7a)
 1. to fix Chrome repainting bug use `setTimeout()` function for showing end of the game alert and reinitializing the game 
 
