@@ -85,4 +85,21 @@ You've completed base game version. Push it to your GitHub repository and publis
 
 ### Step 10
 [code reference](https://github.com/gkapkowski/warsawjs-workshop-15-tictactoe/tree/step-10)
-1. enable players to pick their names
+1. enable players to change their names
+2. update all places that displays player name
+
+## Challenges
+### Rewrite this game using ES6 classes
+1. create classes Player, Scores, Board:
+    * Board responsibilities should be:
+        * store information of current board state
+        * display board on screen
+        * display round information
+    * Player responsibilities should be:
+        * Store name, color, score
+    * Scores responsibilities should be:
+        * display score table
+        * display reset and rename buttons
+### Rewrite this game using React
+### Rewrite this game using Angular
+### Rewrite this game using Vue.js
