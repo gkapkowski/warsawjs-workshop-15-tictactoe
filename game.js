@@ -4,9 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	var filledFields = 0;
 
     var fields = document.querySelectorAll('.board > div');
-    console.log(typeof fields, fields)
 
-    function connectField (element) {
+    function connectField(element) {
         element.addEventListener('click', function fieldClickHandler () {
             var playerClass = playerClasses[currentPlayer];
 
@@ -17,16 +16,65 @@ document.addEventListener('DOMContentLoaded', () => {
 
             element.removeEventListener('click', fieldClickHandler);
 
+            fields = document.querySelectorAll('.board > div');
+
+            redBoard = '';
+            fields.forEach(element => {
+                redBoard+= element.classList.contains('red') ? 'R' : '-';
+            });
+
+            console.log(redBoard);
+
+            switch (redBoard) {
+                case 'RRR------':
+                case '---RRR---':
+                case '------RRR':
+                case 'R--R--R--':
+                case '-R--R--R-':
+                case '--R--R--R':
+                case 'R---R---R':
+                case '--R-R-R--':
+                    alert('Red win!');
+                    resetGame();
+                    break;
+            }
+
+            blueBoard = '';
+            fields.forEach(element => {
+                blueBoard+= element.classList.contains('blue') ? 'B' : '-';
+            });
+
+            console.log(blueBoard);
+
+            switch (blueBoard) {
+                case 'BBB------':
+                case '---BBB---':
+                case '------BBB':
+                case 'B--B--B--':
+                case '-B--B--B-':
+                case '--B--B--B':
+                case 'B---B---B':
+                case '--B-B-B--':
+                    alert('Blue win!');
+					resetGame();
+                    break;
+            }
+
             // game over ?
-			if(isGameOver()) {
-				alert('Koniec gry');
+			if(filledFields === 9) {
+				alert('Tie');
+				resetGame();
 			}
         });
 
     }
 
-    function isGameOver() {
-		return filledFields === 9;
+    function resetGame() {
+		fields.forEach(field => {
+			field.removeAttribute('class');
+			connectField(field);
+		});
+		counter = 0;
 	}
 
     fields.forEach(connectField);
