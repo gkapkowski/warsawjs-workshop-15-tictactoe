@@ -1,0 +1,19 @@
+* {
+	box-sizing: border-box;
+}
+
+.board {
+	height: 300px;
+	width: 300px;
+	margin: 0 auto;
+	font-size: 0;
+}
+
+.board div {
+	height: 100px;
+	width: 100px;
+	background-color: pink;
+	display: inline-block;
+	border: 1px solid grey;
+}
+
