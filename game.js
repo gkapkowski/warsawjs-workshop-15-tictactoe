@@ -58,22 +58,18 @@ document.addEventListener('DOMContentLoaded', () => {
 		];
 
 		if (boardCheck.includes('redredred')) {
-			setTimeout(() => {
-				alert("Red Wins!");
-				initGame();
-			}, 100);
+            alert("Red Wins!");
+            return;
 		}
 
 		if (boardCheck.includes('blueblueblue')) {
-			setTimeout(() => {
-				alert("Blue Wins!");
-				initGame();
-			}, 100);
+			alert("Blue Wins!");
+			return;
 		}
 
 		if(emptyFields === 0) {
 			alert('Tie');
-			initGame();
+			return;
 		}
 	}
 });
