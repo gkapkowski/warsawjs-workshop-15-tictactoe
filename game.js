@@ -1,13 +1,37 @@
 document.addEventListener('DOMContentLoaded', function() {
+	var resetButton = document.getElementById('reset-score');
     var playerClasses = {
         'playerA': 'red', 
         'playerB': 'blue'
     };
+
+    var scores = {
+		'playerA': 0,
+		'playerB': 0
+	}
+
     var currentPlayer;
 	var emptyFields;
 
     initGame();
 
+    resetButton.addEventListener('click', function() {
+    	scores['playerA'] = 0;
+    	scores['playerB'] = 0;
+
+		displayPlayerScore('playerA');
+		displayPlayerScore('playerB');
+	});
+
+	function displayPlayerScore(player) {
+		var score = document.getElementById(`${player}-score`);
+
+		score.innerHTML = `${player} score: ${scores[player]}`;
+	}
+
+	function updatePlayerScore(player) {
+		scores[player]++;
+	}
 
     function displayRoundInformation() {
 		var round = document.getElementById('round-info');
@@ -25,6 +49,8 @@ document.addEventListener('DOMContentLoaded', function() {
 		fields.forEach(field => field.removeAttribute('class'));
 
 		displayRoundInformation();
+		displayPlayerScore('playerA');
+		displayPlayerScore('playerB');
 	}
 
 	function fieldClickHandler () {
@@ -71,15 +97,19 @@ document.addEventListener('DOMContentLoaded', function() {
 		if (boardCheck.includes('redredred')) {
 			setTimeout(() => {
 				alert("Red Wins!");
+				updatePlayerScore('playerA');
 				initGame();
 			}, 100);
+			return;
 		}
 
 		if (boardCheck.includes('blueblueblue')) {
 			setTimeout(() => {
 				alert("Blue Wins!");
+				updatePlayerScore('playerB');
 				initGame();
 			}, 100);
+			return;
 		}
 
 		if(emptyFields === 0) {
@@ -87,6 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 alert('Tie');
                 initGame();
             }, 100);
+            return;
 		}
 	}
 });

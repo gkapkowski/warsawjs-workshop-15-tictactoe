@@ -33,3 +33,10 @@ h1,
 .blue {
 	background-color: cornflowerblue;
 }
+
+#reset-score {
+	background-color: #FFF;
+	padding: 7px 10px;
+	border: 1px solid #CCC;
+	text-transform: uppercase;
+}
