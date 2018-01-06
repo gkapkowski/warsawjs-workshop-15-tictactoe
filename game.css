@@ -1,5 +1,15 @@
 * {
 	box-sizing: border-box;
+	background-color: #dedede;
+}
+
+h1,
+#round-info {
+	text-align: center;
+}
+
+#round-info {
+	color: #d6d6d6;
 }
 
 .board {
