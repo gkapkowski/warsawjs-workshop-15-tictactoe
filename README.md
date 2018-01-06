@@ -6,6 +6,8 @@
 * [create a new repository](https://help.github.com/articles/creating-a-new-repository/).
 - - - -
 ## Initial game
+Yuo can play this completed game [here](https://nmkedziora.github.io/warsawjs-workshop-15-tictactoe/)
+
 ### Step 1
 [code reference](https://github.com/gkapkowski/warsawjs-workshop-15-tictactoe/tree/step-1)
 1. create `initGame()` function which:
