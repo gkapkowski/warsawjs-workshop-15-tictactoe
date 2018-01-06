@@ -1,6 +1,13 @@
 # warsawJS Workshop#15: JavaScript basics with tic-tac-toe game
 
+- - - -
+### Before you start
+* Register on (github.com) and
+* [create a new repository](https://help.github.com/articles/creating-a-new-repository/).
+- - - -
+
 ### Step 1
+[code reference](https://github.com/gkapkowski/warsawjs-workshop-15-tictactoe/tree/step-1)
 1. create `initGame()` function which:
     * gets all `<div>` elements inside `div.board` element
     * adds click event listener for each `<div>` with `fieldClickHandler` listener function
@@ -8,9 +15,11 @@
 2. create `fieldClickHandler()` function which logs string 'Hello' and `this` to the console
 
 ### Step 2
+[code reference](https://github.com/gkapkowski/warsawjs-workshop-15-tictactoe/tree/step-2)
 1. inside `fieldClickHandler()` function add 'red' to clicked element classes (use native `classList.add()`)
 
 ### Step 3
+[code reference](https://github.com/gkapkowski/warsawjs-workshop-15-tictactoe/tree/step-3)
 1. at the top of the file:
     * declare `playerClasses` object to hold color for each player (playerA - 'red' and playerB - 'blue')
     * declare `currentPlayer` variable to hold currentPlayer name
@@ -20,10 +29,11 @@
     * assign to it name of the color of currentPlayer
 
 ### Step 4
+[code reference](https://github.com/gkapkowski/warsawjs-workshop-15-tictactoe/tree/step-4)
 1. remove click event listener from clicked element, so it is impossible to click one element twice (use `removeEventListener()` function)
 
-
 ### Step 5
+[code reference](https://github.com/gkapkowski/warsawjs-workshop-15-tictactoe/tree/step-5)
 1. at the top of the file declare `emptyFields` variable in which you will store number of empty fileds left
 2. inside `initGame()` function assign to this variable number of empty fields at the beginning of the game (9)
 3. inside `fieldClickHandler()` function:
@@ -32,6 +42,7 @@
     * if it has ended show alert on the screen (use built-in `alert()` function)
 
 ### Step 6
+[code reference](https://github.com/gkapkowski/warsawjs-workshop-15-tictactoe/tree/step-6)
 1. create new function `checkWinner()` and inside this function:
     * get all `<div>` elements inside `div.board` element and store it as a variable
     * think of possible winning scenarios for each player (how board looks like in horizontal, vertical and diagonal lines)
@@ -43,12 +54,25 @@
     * move end game check to the bottom of `checkWinner()` function
 
 ### Step 6a
+[code reference](https://github.com/gkapkowski/warsawjs-workshop-15-tictactoe/tree/step-6a)
 1. create array with all winning configurations
 2. change `if() {...}` statements to use `.includes()` to check the winner
 
 ### Step 7
+[code reference](https://github.com/gkapkowski/warsawjs-workshop-15-tictactoe/tree/step-7)
 1. reinitialize game once any of the players wins or there is no more empty fields on the board
 
-
-### Step 7a 
+### Step 7a
+[code reference](https://github.com/gkapkowski/warsawjs-workshop-15-tictactoe/tree/step-7a)
 1. to fix Chrome repainting bug use `setTimeout()` function for showing end of the game alert and reinitializing the game 
+
+- - - -
+### Make your game available on the Internet
+You've completed base game version. Push it to your GitHub repository and publish it on gh-pages.
+[How to publish on gh-pages](https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/#enabling-github-pages-to-publish-your-site-from
+-master-or-gh-pages)
+- - - -
+
+### Step 8
+[code reference](https://github.com/gkapkowski/warsawjs-workshop-15-tictactoe/tree/step-8)
+1. display information about which player round is now
