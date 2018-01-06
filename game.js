@@ -10,6 +10,11 @@ document.addEventListener('DOMContentLoaded', function() {
 		'playerB': 0
 	}
 
+	var names = {
+		'playerA': 'playerA',
+		'playerB': 'playerB'
+	}
+
     var currentPlayer;
 	var emptyFields;
 
@@ -23,10 +28,22 @@ document.addEventListener('DOMContentLoaded', function() {
 		displayPlayerScore('playerB');
 	});
 
+	for (let player in names) {
+		let renameButton = document.getElementById(`${player}-rename`);
+		renameButton.innerText = `Rename ${player}`;
+		renameButton.addEventListener('click', function () {
+			names[player] = prompt(`Rename ${player} to:`);
+			renameButton.innerText = `Rename ${names[player]}`;
+			displayRoundInformation();
+			displayPlayerScore('playerA');
+			displayPlayerScore('playerB');
+		})
+	}
+	
 	function displayPlayerScore(player) {
 		var score = document.getElementById(`${player}-score`);
 
-		score.innerHTML = `${player} score: ${scores[player]}`;
+		score.innerHTML = `${names[player]} score: ${scores[player]}`;
 	}
 
 	function updatePlayerScore(player) {
@@ -37,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		var round = document.getElementById('round-info');
 
 		round.className = playerClasses[currentPlayer];
-		round.innerHTML = `Round for ${currentPlayer}`;
+		round.innerHTML = `Round for ${names[currentPlayer]}`;
     }
 
     function initGame() {
@@ -96,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 		if (boardCheck.includes('redredred')) {
 			setTimeout(() => {
-				alert("Red Wins!");
+				alert(`${names['playerA']} Wins!`);
 				updatePlayerScore('playerA');
 				initGame();
 			}, 100);
@@ -105,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 		if (boardCheck.includes('blueblueblue')) {
 			setTimeout(() => {
-				alert("Blue Wins!");
+				alert(`${names['playerB']} Wins!`);
 				updatePlayerScore('playerB');
 				initGame();
 			}, 100);
