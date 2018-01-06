@@ -1,4 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
+	const board = new Board('.board');
+
+
+
+
 	var resetButton = document.getElementById('reset-score');
     var playerClasses = {
         'playerA': 'red', 
@@ -8,17 +13,17 @@ document.addEventListener('DOMContentLoaded', function() {
     var scores = {
 		'playerA': 0,
 		'playerB': 0
-	}
+	};
 
 	var names = {
 		'playerA': 'playerA',
 		'playerB': 'playerB'
-	}
+	};
 
     var currentPlayer;
 	var emptyFields;
 
-    initGame();
+    // initGame();
 
     resetButton.addEventListener('click', function() {
     	scores['playerA'] = 0;
